@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+header {
+    background-color: #D2691E;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+header h1 {
+    margin: 0;
+}
+
+.main-content {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2, h3 {
+    color: #0077CC;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #2E8B57;
+    color: #fff;
+}
+
+/* Terre Cuite (Clay) :
+
+Code couleur : #D2691E
+Raison : Évoque la chaleur de la terre, rappelant les aspects naturels et culturels du Nigeria.
+Vert Jungle :
+
+Code couleur : #2E8B57
+Raison : Évoque la nature luxuriante, la diversité de la flore et la richesse environnementale du Nigeria.
+Bleu Numérique :
+
+Code couleur : #0077CC
+Raison : Représente la composante numérique du projet, évoquant la technologie et l'accessibilité en ligne. */
