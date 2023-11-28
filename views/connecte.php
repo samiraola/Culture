@@ -1,9 +1,22 @@
 <?php
 ob_start();
+session_start();
 require_once "../models/config.php";
 
-
-
+if(!empty($_SESSION['user_id'])){
+    $sessionId = $_SESSION['user_id'];
+    $recup = $connexion->prepare('SELECT * FROM users WHERE id=?');
+    $recup->execute(array($sessionId));
+    if($recup){
+        
+        $selection = $recup->fetch(PDO::FETCH_ASSOC);
+        
+    }else{
+        die("une erreur est survenue") ;
+    }
+}else{
+    echo "erreur";
+}
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +36,10 @@ require_once "../models/config.php";
 
     <!-- Barre de navigation -->
     <nav>
-        <li>Bienvenue  </li>
+        <!--  -->
+        <p class="para">Bienvenue <?php echo $selection['nom'].' '.$selection["prenom"] ;  ?>
+        </p>
+        
         <ul>
             <li><a href="#accueil">Accueil</a></li>
             <li><a href="#musique">Musique</a></li>
@@ -35,7 +51,7 @@ require_once "../models/config.php";
                <input type="text" name="" id="" placeholder="rechercher">
                <i class='bx bx-search icon'></i>    
             </li>
-            <button type="button"><a href="">Deconnexion</a></button>
+            <button type="button"><a href="../models/deconnexion.php">Deconnexion</a></button>
         </ul>
     </nav>
 

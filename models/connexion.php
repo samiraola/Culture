@@ -25,9 +25,9 @@ session_start();
     $recupe = $selection->fetch(PDO::FETCH_ASSOC); // Utilisez FETCH_ASSOC pour récupérer un tableau associatif
 
     if ($recupe) {
-        $_SESSION['id'] = $recupe['id'];
-        header('LOCATION: ../views/connecte.php'); // Utilisez "header" au lieu de "Header"
-        exit(); // Assurez-vous de terminer le script après
+        $_SESSION['user_id'] = $recupe['id'];
+        header('LOCATION: ../views/connecte.php');
+        exit(); 
     }else{
         echo "l'utilisateur n'existe pas";
     }
