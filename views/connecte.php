@@ -1,23 +1,3 @@
-<?php
-ob_start();
-session_start();
-require_once "../models/config.php";
-
-if(!empty($_SESSION['user_id'])){
-    $sessionId = $_SESSION['user_id'];
-    $recup = $connexion->prepare('SELECT * FROM users WHERE id=?');
-    $recup->execute(array($sessionId));
-    if($recup){
-        
-        $selection = $recup->fetch(PDO::FETCH_ASSOC);
-        
-    }else{
-        die("une erreur est survenue") ;
-    }
-}else{
-    echo "erreur";
-}
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -41,7 +21,7 @@ if(!empty($_SESSION['user_id'])){
         </p>
         
         <ul>
-            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="/">Accueil</a></li>
             <li><a href="#musique">Musique</a></li>
             <li><a href="#art-numerique">Art Numérique</a></li>
             <li><a href="#mode">Mode</a></li>
@@ -51,7 +31,7 @@ if(!empty($_SESSION['user_id'])){
                <input type="text" name="" id="" placeholder="rechercher">
                <i class='bx bx-search icon'></i>    
             </li>
-            <button type="button"><a href="../models/deconnexion.php">Deconnexion</a></button>
+            <button type="button"><a href="deconnexion">Deconnexion</a></button>
         </ul>
     </nav>
 

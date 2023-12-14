@@ -11,7 +11,7 @@
     <header>
         <h1>Culture et Numérique</h1>
         <p>Exploration, Promotion, Préservation de la Culture à travers le Numérique</p>
-        <button type="button"><a href="./models/deconnexion.php">Deconnexion</a></button>
+        <button type="button"><a href="deconnexion">Deconnexion</a></button>
     </header>
     
     <section class="main-content">

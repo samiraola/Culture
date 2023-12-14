@@ -1,8 +1,7 @@
 <?php
-session_start();
 ob_start();
+// session_start();
 require_once "config.php";
-
 if (!empty($_SESSION['id'])) {
     $sessionUserId = $_SESSION['id'];
     $selection = $connexion->prepare("SELECT * FROM users WHERE id=:sessionUserId");
@@ -19,12 +18,12 @@ if (!empty($_SESSION['id'])) {
 
     if ($recupe) {
         unset($_SESSION['id']);
-        header('Location: connexion.php');
+        header('Location: connexion');
     } else {
         die("Utilisateur inconnu");
     }
 } else {
-    header('Location: ./connexion.php');
+    header('Location: ./connexion');
 }
 
 
